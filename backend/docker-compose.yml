@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  phpmyadmin:
+    # build: ./phpmyadmin
+    image: phpmyadmin:latest
+    restart: always
+    container_name: phpmyadmin
+    ports:
+      - 6081:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - db
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+        MYSQL_DATABASE: housing_finder
+        MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ./databases:/var/lib/mysql
+    ports:
+      - "6080:3306"
+
+volumes:
+  databases:

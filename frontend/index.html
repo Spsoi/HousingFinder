@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Поиск квартир</title>
+    <style>
+        #dropdownFilter {
+            min-width: 800px;
+        }
+
+        #dropdownBuilding {
+            min-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Поиск квартир</h1>
+    <form id="searchForm">
+        <div id="selectContainerFilter">
+            <label for="filter">Фильтр:</label>
+            <input type="text" id="filter" name="filter">
+            <select id="dropdownFilter" name="dropdownFilter">
+            </select>
+        </div>
+
+        <label for="city">Город:</label>
+        <input type="text" id="city" name="city"><br>
+
+        <label for="district">Район:</label>
+        <input type="text" id="district" name="district"><br>
+
+        <label for="complex">Жилой комплекс (ЖК):</label>
+        <input type="text" id="complex" name="complex"><br>
+
+        <label for="street">Улица:</label>
+        <input type="text" id="street" name="street"><br>
+      
+        
+        <div id="selectContainerFilter">
+            <label for="building">Дом:</label>
+            <input type="text" id="building" name="building">
+            <select id="dropdownBuilding" name="dropdownBuilding"></select>
+        </div>
+     
+
+        <label for="corpus">Корпус:</label>
+        <input type="text" id="corpus" name="corpus"><br>
+
+        <label for="total_floors">Всего этажей:</label>
+        <input type="number" id="total_floors" name="total_floors"><br>
+
+        <label for="floor">Этаж:</label>
+        <input type="number" id="floor" name="floor"><br>
+
+        <label for="rooms">Комнатность:</label>
+        <input type="number" id="rooms" name="rooms"><br>
+
+        <label for="area">Площадь квартиры:</label>
+        <input type="number" id="area" name="area"><br>
+
+        <label for="rent_price">Стоимость аренды:</label>
+        <input type="number" id="rent_price" name="rent_price"><br>
+
+        <button id="submitBtn">Поиск</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="script.js">
+     
+    </script>
+</body>
+
+</html>
